@@ -92,7 +92,7 @@ function server(done) {
 
 function watch() {
     gulp.watch('src/assets/**/*', copy)
-    gulp.watch('src/{layouts,partials, pages}/**/*.html').on(
+    gulp.watch('src/{layouts,partials,pages}/**/*.html').on(
         'all',
         gulp.series(resetPages, pages, browser.reload)
     )

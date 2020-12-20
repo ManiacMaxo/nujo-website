@@ -4,6 +4,14 @@
     .grid {
         grid-template-columns: repeat(3, 1fr);
 
+        .light {
+            background-color: $light-color;
+            .command,
+            .theme {
+                color: #000;
+            }
+        }
+
         devsite-code {
             font-size: 18px;
             position: relative;
@@ -33,30 +41,33 @@
                     }
                 }
             }
-            .mac-buttons {
-                width: 60px;
-                top: -20px;
-                left: -15px;
-                position: relative;
+            header {
                 display: flex;
                 justify-content: space-between;
-                z-index: 2;
+                color: #eceff1;
 
-                div {
-                    border-radius: 50%;
-                    height: 15px;
-                    width: 15px;
+                .mac-buttons {
+                    width: 60px;
+                    display: flex;
+                    justify-content: space-between;
+                    z-index: 2;
 
-                    &:nth-child(1) {
-                        background: rgb(253, 95, 88);
-                    }
+                    div {
+                        border-radius: 50%;
+                        height: 15px;
+                        width: 15px;
 
-                    &:nth-child(2) {
-                        background: rgb(254, 188, 47);
-                    }
+                        &:nth-child(1) {
+                            background: rgb(253, 95, 88);
+                        }
 
-                    &:nth-child(3) {
-                        background: rgb(40, 200, 64);
+                        &:nth-child(2) {
+                            background: rgb(254, 188, 47);
+                        }
+
+                        &:nth-child(3) {
+                            background: rgb(40, 200, 64);
+                        }
                     }
                 }
             }
