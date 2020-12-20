@@ -1,0 +1,29 @@
+{
+    "name": "nujo",
+    "description": "modern site for nujo python library",
+    "private": true,
+    "dependencies": {
+        "@babel/core": "^7.12.10",
+        "@babel/helper-module-imports": "^7.12.5",
+        "@babel/preset-env": "^7.12.11",
+        "@babel/register": "^7.12.10",
+        "babel": "^6.23.0",
+        "babel-loader": "^8.2.2",
+        "browser-sync": "^2.26.13",
+        "cssnano": "^4.1.10",
+        "gulp": "^4.0.2",
+        "gulp-babel": "^8.0.0",
+        "gulp-cache": "^1.1.3",
+        "gulp-if": "^3.0.0",
+        "gulp-imagemin": "^7.1.0",
+        "gulp-sass": "^4.1.0",
+        "gulp-sourcemaps": "^3.0.0",
+        "gulp-uglify": "^3.0.2",
+        "gulp-useref": "^5.0.0",
+        "node-sass": "^5.0.0",
+        "panini": "^1.7.1",
+        "webpack": "^5.11.0",
+        "webpack-stream": "^6.1.1",
+        "yargs": "^16.2.0"
+    }
+}

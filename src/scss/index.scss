@@ -1,0 +1,55 @@
+@import 'style';
+@import 'utils';
+@import 'components/showcase';
+@import 'components/stats';
+@import 'components/cli';
+@import 'components/cloud';
+@import 'components/libraries';
+
+@media (max-width: $tablet-width) {
+    .grid {
+        grid-template-columns: 1fr !important;
+        grid-template-rows: auto !important;
+
+        & > * {
+            grid-column: 1 !important;
+            grid-row: auto !important;
+        }
+    }
+
+    .showcase {
+        height: auto;
+
+        &-text {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        &-form {
+            justify-self: center;
+        }
+    }
+
+    .cli {
+        devsite-code {
+            $padding: 1rem;
+            margin: $padding;
+            width: calc(100% - 2 * #{$padding}) !important;
+        }
+    }
+}
+
+@media (max-width: $mobile-width) {
+    .global-header {
+        height: 110px;
+
+        .flex {
+            flex-direction: column;
+        }
+
+        ul {
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+    }
+}

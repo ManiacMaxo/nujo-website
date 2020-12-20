@@ -1,0 +1,24 @@
+.libraries {
+    .flex {
+        flex-wrap: wrap;
+    }
+    .card {
+        text-align: center;
+        margin: 18px 10px 40px;
+        transition: transform 0.2s ease-in;
+
+        h4 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        img {
+            width: 100px;
+            height: 100px;
+        }
+
+        &:hover {
+            transform: translateY(-10px);
+        }
+    }
+}
