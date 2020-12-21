@@ -1,0 +1,16 @@
+$primary-color: #047aed;
+$secondary-color: #1c3fa8;
+$dark-color: #0c1021;
+$light-color: #f4f4f4;
+$success-color: #5cb85c;
+$error-color: #d9534f;
+
+$mobile-width: 500px;
+$tablet-width: 850px;
+
+@mixin transform($property) {
+    transform: $property;
+    -webkit-transform: $property;
+    -moz-transform: $property;
+    -ms-transform: $property;
+}

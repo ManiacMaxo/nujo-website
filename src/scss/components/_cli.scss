@@ -1,4 +1,4 @@
-@import '../utils';
+@import '../const';
 
 .cli {
     .grid {
@@ -27,24 +27,15 @@
                 display: flex;
                 flex-direction: column;
                 margin-bottom: 2rem;
-
-                .command {
-                    color: #eceff1;
-                    &::before {
-                        content: '$ ';
-                    }
-                }
-                .comment {
-                    color: #f06292;
-                    &::before {
-                        content: '# ';
-                    }
-                }
             }
             header {
                 display: flex;
                 justify-content: space-between;
                 color: #eceff1;
+
+                .theme {
+                    cursor: pointer;
+                }
 
                 .mac-buttons {
                     width: 60px;
@@ -52,12 +43,16 @@
                     justify-content: space-between;
                     z-index: 2;
 
-                    div {
+                    div,
+                    button {
                         border-radius: 50%;
                         height: 15px;
                         width: 15px;
 
                         &:nth-child(1) {
+                            cursor: pointer;
+                            border: none;
+                            outline: none;
                             background: rgb(253, 95, 88);
                         }
 

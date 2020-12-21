@@ -3,13 +3,13 @@
         <h1 class="logo">nujo</h1>
         <ul>
             <li>
-                <a href="/index.html">Home</a>
+                <a {{#ifpage 'index'}}class="active"{{/ifpage}} href="/index.html">Home</a>
             </li>
             <li>
-                <a href="/features.html">Features</a>
+                <a {{#ifpage 'features'}}class="active"{{/ifpage}} href="/features.html">Features</a>
             </li>
             <li>
-                <a href="/docs.html">Docs</a>
+                <a {{#ifpage 'docs'}}class="active"{{/ifpage}} href="/docs.html">Docs</a>
             </li>
             <li>
                 <a href="https://github.com/VIVelev/nujo">GitHub</a>

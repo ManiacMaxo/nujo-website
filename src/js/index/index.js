@@ -1,12 +1,3 @@
-// window.onload = () => {
-//     for (counter of document.querySelectorAll('.counter')) {
-//         counter.style.setProperty('--num', counter.getAttribute('data-target'))
-//         counter.classList.add('active')
-//     }
-// }
-
-document.querySelector('#copyright').innerHTML += new Date().getFullYear()
-
 const themeButton = document.querySelector('.theme')
 
 themeButton.addEventListener('click', () => {
@@ -21,7 +12,13 @@ themeButton.addEventListener('click', () => {
     }
 })
 
+document.querySelector('#redCloseButton').addEventListener('click', () => {
+    self.close()
+})
+
 window.onload = () => {
+    document.querySelector('#copyright').innerHTML += new Date().getFullYear()
+
     if (window.localStorage.getItem('theme') === 'true') {
         themeButton.classList.toggle('fa-sun')
         themeButton.classList.toggle('fa-moon')

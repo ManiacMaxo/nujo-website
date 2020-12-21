@@ -1,35 +1,33 @@
-$primary-color: #047aed;
-$secondary-color: #1c3fa8;
-$dark-color: #0c1021;
-$light-color: #f4f4f4;
-
-$mobile-width: 500px;
-$tablet-width: 768px;
-
-@mixin transform($property) {
-    transform: $property;
-    -webkit-transform: $property;
-    -moz-transform: $property;
-    -ms-transform: $property;
-}
+@import 'const';
 
 .container {
-    max-width: 1100px;
+    max-width: calc(1200px + 2 * 2rem);
     margin: 0 auto;
     overflow: auto;
-}
-
-.card {
-    background-color: #fff;
-    color: #333;
-    border-radius: 10px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    margin: 10px;
+    padding: 0 2rem;
 }
 
 .text-center {
     text-align: center;
+}
+
+.text-link {
+    color: $primary-color;
+    cursor: pointer;
+    display: inline-block;
+
+    &::after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 1px;
+        background: $primary-color;
+        transition: width 0.2s;
+    }
+
+    &:hover::after {
+        width: 60%;
+    }
 }
 
 .flex {
@@ -54,6 +52,7 @@ $tablet-width: 768px;
 }
 
 /* Buttons and Backgrounds */
+
 .btn {
     display: inline-block;
     padding: 10px 30px;
@@ -62,8 +61,11 @@ $tablet-width: 768px;
     color: #fff;
     border: none;
     border-radius: 5px;
+    transition: all 0.1s;
 
-    &:hover {
+    &:hover,
+    &:active,
+    &:focus {
         transform: scale(0.9);
     }
 }
@@ -89,10 +91,13 @@ $tablet-width: 768px;
         transition: all 0.3s;
     }
 
-    &:hover {
+    &:hover,
+    &:active,
+    &:focus {
         transform: scale(1);
         color: $primary-color;
         transition-delay: 0.1s;
+
         &::after {
             transform: scaleY(1);
         }
@@ -101,29 +106,68 @@ $tablet-width: 768px;
 
 .bg-primary,
 .btn-primary {
-    background-color: $primary-color;
-    color: #fff;
+    background-color: $primary-color !important;
+    color: #fff !important;
 }
 
 .bg-secondary,
 .btn-secondary {
-    background-color: $secondary-color;
-    color: #fff;
+    background-color: $secondary-color !important;
+    color: #fff !important;
 }
 
 .bg-dark,
 .btn-dark {
-    background-color: $dark-color;
-    color: #fff;
+    background-color: $dark-color !important;
+    color: #fff !important;
 }
 
 .bg-light,
 .btn-light {
+    background-color: $light-color !important;
+    color: #333 !important;
+}
+
+/* Alerts */
+
+.alert {
     background-color: $light-color;
-    color: #333;
+    padding: 10px 20px;
+    font-weight: bold;
+    margin: 15px 0;
+
+    i {
+        margin-right: 10px;
+    }
+
+    &-success {
+        background-color: $success-color;
+        color: #fff;
+    }
+
+    &-error {
+        background-color: $error-color;
+        color: #fff;
+    }
+}
+
+/* Code */
+
+.command {
+    color: #eceff1;
+    &::before {
+        content: '$ ';
+    }
+}
+.comment {
+    color: #f06292;
+    &::before {
+        content: '# ';
+    }
 }
 
 /* Margins and Paddings */
+
 .my-1 {
     margin-top: 1rem;
     margin-bottom: 1rem;

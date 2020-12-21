@@ -1,131 +1,150 @@
-<section class="showcase bg-primary">
-    <div class="container grid">
-        <div class="showcase-text">
-            <h1>Easy model building</h1>
-            <p>
-                Build and train ML models easily using intuitive high-level APIs
-                with eager execution, which makes for immediate model iteration
-                and easy debugging.
-            </p>
-            <a href="features.html" class="btn btn-outline"> Read More </a>
+<main>
+    <section class="showcase bg-primary">
+        <div class="container grid">
+            <div class="showcase-text">
+                <h1>Easy model building</h1>
+                <p>
+                    Build and train ML models easily using intuitive high-level
+                    APIs with eager execution, which makes for immediate model
+                    iteration and easy debugging.
+                </p>
+                <a
+                    href="/features.html"
+                    class="btn btn-outline"
+                    title="features"
+                >
+                    Read More
+                </a>
+            </div>
+
+            <div class="showcase-form card">
+                <h2>Request a Demo</h2>
+                <form>
+                    <div class="form-control">
+                        <input
+                            type="text"
+                            name="name"
+                            placeholder="Name"
+                            required
+                        />
+                    </div>
+                    <div class="form-control">
+                        <input
+                            type="text"
+                            name="company"
+                            placeholder="Company Name"
+                            required
+                        />
+                    </div>
+                    <div class="form-control">
+                        <input
+                            type="email"
+                            name="email"
+                            placeholder="Email"
+                            required
+                        />
+                    </div>
+                    <button type="submit" class="btn btn-primary" title="Send">
+                        Send
+                    </button>
+                </form>
+            </div>
         </div>
+    </section>
 
-        <div class="showcase-form card">
-            <h2>Request a Demo</h2>
-            <form>
-                <div class="form-control">
-                    <input
-                        type="text"
-                        name="name"
-                        placeholder="Name"
-                        required
-                    />
-                </div>
-                <div class="form-control">
-                    <input
-                        type="text"
-                        name="company"
-                        placeholder="Company Name"
-                        required
-                    />
-                </div>
-                <div class="form-control">
-                    <input
-                        type="email"
-                        name="email"
-                        placeholder="Email"
-                        required
-                    />
-                </div>
-                <button type="submit" class="btn btn-primary">Send</button>
-            </form>
+    <section class="stats">
+        <div class="container">
+            <h3 class="stats-heading text-center my-1">
+                A Reverse-mode Automatic Differentiation library for Neural
+                Networks
+            </h3>
+
+            <div class="grid grid-3 text-center my-4">
+                <article>
+                    <i class="fas fa-server fa-3x"></i>
+                    <!-- <h3 class="counter" data-target="10349405"></h3> -->
+                    <h3>10,349,405</h3>
+                    <p class="text-secondary">Deployments</p>
+                </article>
+                <article>
+                    <i class="fas fa-upload fa-3x"></i>
+                    <h3>
+                        <!-- <div class="counter" data-target="902"></div> -->
+                        902 TB
+                    </h3>
+                    <p class="text-secondary">Published</p>
+                </article>
+                <article>
+                    <i class="fas fa-project-diagram fa-3x"></i>
+                    <!-- <h3 class="counter" data-target="2205669"></h3> -->
+                    <h3>2,205,669</h3>
+                    <p class="text-secondary">Projects</p>
+                </article>
+            </div>
         </div>
-    </div>
-</section>
-
-<section class="stats">
-    <div class="container">
-        <h3 class="stats-heading text-center my-1">
-            A Reverse-mode Automatic Differentiation library for Neural Networks
-        </h3>
-
-        <div class="grid grid-3 text-center my-4">
-            <article>
-                <i class="fas fa-server fa-3x"></i>
-                <!-- <h3 class="counter" data-target="10349405"></h3> -->
-                <h3>10,349,405</h3>
-                <p class="text-secondary">Deployments</p>
+    </section>
+    <section class="cli">
+        <div class="container grid">
+            <devsite-code>
+                <header>
+                    <div class="mac-buttons">
+                        <button
+                            id="redCloseButton"
+                            title="do not click"
+                        ></button>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <i class="theme fas fa-sun" title="change theme"></i>
+                </header>
+                <p>
+                    <span class="comment">Requires the latest pip</span>
+                    <span class="command">pip install --upgrade pip</span>
+                    <br />
+                    <span class="comment">Current stable release</span>
+                    <span class="command">pip install nujo</span>
+                </p>
+            </devsite-code>
+            <article class="card">
+                <h3>Easy to use, cross platform CLI</h3>
             </article>
-            <article>
-                <i class="fas fa-upload fa-3x"></i>
-                <h3>
-                    <!-- <div class="counter" data-target="902"></div> -->
-                    902 TB
-                </h3>
-                <p class="text-secondary">Published</p>
-            </article>
-            <article>
-                <i class="fas fa-project-diagram fa-3x"></i>
-                <!-- <h3 class="counter" data-target="2205669"></h3> -->
-                <h3>2,205,669</h3>
-                <p class="text-secondary">Projects</p>
+            <article class="card">
+                <h3>Spin up a model in seconds</h3>
             </article>
         </div>
-    </div>
-</section>
-<section class="cli">
-    <div class="container grid">
-        <devsite-code>
-            <header>
-                <div class="mac-buttons">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
-                <i class="theme fas fa-sun"></i>
-            </header>
-            <p>
-                <span class="comment">Requires the latest pip</span>
-                <span class="command">pip install --upgrade pip</span>
-                <br />
-                <span class="comment">Current stable release</span>
-                <span class="command">pip install nujo</span>
-            </p>
-        </devsite-code>
-        <article class="card">
-            <h3>Easy to use, cross platform CLI</h3>
-        </article>
-        <article class="card">
-            <h3>Spin up in seconds</h3>
-        </article>
-    </div>
-</section>
+    </section>
 
-<section class="cloud bg-primary my-2 py-2">
-    <div class="container grid">
-        <div class="text-center">
-            <h2 class="lg">Extreme model creation</h2>
-            <p class="lead my-1">Some text here</p>
-            <a href="features.html" class="btn btn-dark">Read More</a>
+    <section class="cloud bg-primary my-2 py-2">
+        <div class="container grid">
+            <div class="text-center">
+                <h2 class="lg">Advanced model training</h2>
+                <p class="lead my-1">
+                    Upload your model to the Cloud and train easily without
+                    powerful computational tools
+                </p>
+                <a href="features.html" class="btn btn-dark" title="features">
+                    Read More
+                </a>
+            </div>
+            <img src="/assets/img/cloud.png" alt="" />
         </div>
-        <img src="/assets/img/cloud.png" alt="" />
-    </div>
-</section>
+    </section>
 
-<section class="libraries">
-    <h2 class="md text-center my-2">Used libraries</h2>
-    <div class="container flex">
-        <article class="card">
-            <h4>python</h4>
-            <img src="/assets/img/python.svg" alt="python" />
-        </article>
-        <article class="card">
-            <h4>numpy</h4>
-            <img src="/assets/img/numpy.svg" alt="numpy" />
-        </article>
-        <article class="card">
-            <h4>pdoc3</h4>
-            <img src="/assets/img/pdoc.png" alt="pdoc3" />
-        </article>
-    </div>
-</section>
+    <section class="logos">
+        <h2 class="md text-center my-2">Used tools</h2>
+        <div class="container flex">
+            <article class="card">
+                <h4>python</h4>
+                <img src="/assets/img/python.svg" alt="python" />
+            </article>
+            <article class="card">
+                <h4>numpy</h4>
+                <img src="/assets/img/numpy.svg" alt="numpy" />
+            </article>
+            <article class="card">
+                <h4>pdoc3</h4>
+                <img src="/assets/img/pdoc.png" alt="pdoc3" />
+            </article>
+        </div>
+    </section>
+</main>

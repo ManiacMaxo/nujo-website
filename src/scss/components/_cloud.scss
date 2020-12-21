@@ -1,5 +1,21 @@
+@import '../const';
+
 .cloud {
     .grid {
-        grid-template-columns: 4fr 3fr;
+        grid-template-columns: 4fr 2fr;
+    }
+}
+
+@media (max-width: $tablet-width) {
+    .cloud .grid img {
+        height: 300px;
+        width: auto;
+        justify-self: center;
+    }
+}
+
+@media (max-width: $mobile-width) {
+    .cloud .text-center {
+        text-align: center;
     }
 }

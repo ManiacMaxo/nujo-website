@@ -1,10 +1,12 @@
-.libraries {
+@import '../const';
+
+.logos {
     .flex {
         flex-wrap: wrap;
     }
     .card {
         text-align: center;
-        margin: 18px 10px 40px;
+        margin: 18px 10px;
         transition: transform 0.2s ease-in;
 
         h4 {
@@ -18,7 +20,7 @@
         }
 
         &:hover {
-            transform: translateY(-10px);
+            @include transform(translateY(-10px));
         }
     }
 }
