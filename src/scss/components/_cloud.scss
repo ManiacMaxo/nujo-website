@@ -4,6 +4,9 @@
     .grid {
         grid-template-columns: 4fr 2fr;
     }
+    p {
+        font-weight: 300;
+    }
 }
 
 @media (max-width: $tablet-width) {

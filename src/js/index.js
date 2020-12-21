@@ -1,5 +1,13 @@
 const themeButton = document.querySelector('.theme')
 
+document.querySelector('#copyright').innerHTML += new Date().getFullYear()
+
+if (window.localStorage.getItem('theme') === 'true') {
+    themeButton.classList.toggle('fa-sun')
+    themeButton.classList.toggle('fa-moon')
+    document.querySelector('devsite-code').classList.toggle('light')
+}
+
 themeButton.addEventListener('click', () => {
     themeButton.classList.toggle('fa-sun')
     themeButton.classList.toggle('fa-moon')
@@ -15,13 +23,3 @@ themeButton.addEventListener('click', () => {
 document.querySelector('#redCloseButton').addEventListener('click', () => {
     self.close()
 })
-
-window.onload = () => {
-    document.querySelector('#copyright').innerHTML += new Date().getFullYear()
-
-    if (window.localStorage.getItem('theme') === 'true') {
-        themeButton.classList.toggle('fa-sun')
-        themeButton.classList.toggle('fa-moon')
-        document.querySelector('devsite-code').classList.toggle('light')
-    }
-}

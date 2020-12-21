@@ -1,0 +1,25 @@
+@import '../const';
+
+.bg-primary,
+.btn-primary {
+    background-color: $primary-color !important;
+    color: #fff !important;
+}
+
+.bg-secondary,
+.btn-secondary {
+    background-color: $secondary-color !important;
+    color: #fff !important;
+}
+
+.bg-dark,
+.btn-dark {
+    background-color: $dark-color !important;
+    color: #fff !important;
+}
+
+.bg-light,
+.btn-light {
+    background-color: $light-color !important;
+    color: #333 !important;
+}

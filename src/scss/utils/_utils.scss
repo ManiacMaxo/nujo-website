@@ -1,0 +1,58 @@
+@import '../const';
+@import 'alert';
+@import 'btn';
+@import 'code';
+@import 'coloring';
+@import 'gap';
+@import 'text';
+
+.container {
+    max-width: calc(1200px + 2 * 2rem);
+    margin: 0 auto;
+    overflow: auto;
+    padding: 0 2rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-link {
+    color: $primary-color;
+    cursor: pointer;
+    display: inline-block;
+
+    &::after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 1px;
+        background: $primary-color;
+        transition: width 0.2s;
+    }
+
+    &:hover::after {
+        width: 60%;
+    }
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+
+    &-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

@@ -1,16 +1,18 @@
 import gulp from 'gulp'
 import sass from 'gulp-sass'
-import cssnano from 'cssnano'
+import cleanCss from 'gulp-clean-css'
 import sourcemaps from 'gulp-sourcemaps'
-import browser from 'browser-sync'
-import uglify from 'gulp-uglify'
 import gulpIf from 'gulp-if'
-import rimraf from 'rimraf'
 import imagemin from 'gulp-imagemin'
 import cache from 'gulp-cache'
+
+import browser from 'browser-sync'
+import rimraf from 'rimraf'
 import webpackStream from 'webpack-stream'
 import yargs from 'yargs'
 import panini from 'panini'
+
+import webpackConfig from './webpack.config.babel'
 
 const PRODUCTION = !!yargs.argv.production
 
@@ -28,7 +30,7 @@ function scss() {
         .src('src/scss/**/*.scss')
         .pipe(sourcemaps.init())
         .pipe(sass())
-        .pipe(gulpIf(PRODUCTION, cssnano()))
+        .pipe(gulpIf(PRODUCTION, cleanCss({ compatibility: 'ie9' })))
         .pipe(gulpIf(!PRODUCTION, sourcemaps.write()))
         .pipe(gulp.dest('dist/css'))
         .pipe(browser.reload({ stream: true }))
@@ -38,13 +40,7 @@ function js() {
     return gulp
         .src('src/js/**/*.js')
         .pipe(sourcemaps.init())
-        .pipe(
-            webpackStream({
-                mode: 'production',
-                output: { filename: '[name].bundle.js' },
-            })
-        )
-        .pipe(gulpIf(PRODUCTION, uglify()))
+        .pipe(webpackStream(webpackConfig))
         .pipe(gulpIf(!PRODUCTION, sourcemaps.write()))
         .pipe(gulp.dest('dist/js'))
 }
@@ -66,12 +62,12 @@ function copy() {
 
 function pages() {
     return gulp
-        .src('src/pages/**/*.{html,hbs,handlebars}')
+        .src('src/pages/**/*.html')
         .pipe(
             panini({
                 root: 'src/pages/',
                 layouts: 'src/layouts/',
-                partials: 'src/partials/',
+                partials: 'src/partials/'
             })
         )
         .pipe(gulp.dest('dist'))
@@ -85,7 +81,7 @@ function resetPages(done) {
 function server(done) {
     browser.init({
         server: 'dist',
-        port: 3005,
+        port: 3005
     })
     done()
 }

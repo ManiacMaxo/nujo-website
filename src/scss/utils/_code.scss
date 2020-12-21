@@ -1,0 +1,12 @@
+.command {
+    color: #eceff1;
+    &::before {
+        content: '$ ';
+    }
+}
+.comment {
+    color: #f06292;
+    &::before {
+        content: '# ';
+    }
+}
