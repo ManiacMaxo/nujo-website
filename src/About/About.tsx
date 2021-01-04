@@ -1,4 +1,4 @@
-import './scss/About.scss'
+import './About.scss'
 import React from 'react'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -8,9 +8,9 @@ library.add(faServer)
 
 interface Props {}
 
-export const About: React.FC<Props> = () => {
+const About: React.FC<Props> = () => {
     return (
-        <main>
+        <main className="about-page">
             <section className="heading bg-primary py-4">
                 <div className="container grid">
                     <div>
@@ -57,3 +57,5 @@ export const About: React.FC<Props> = () => {
         </main>
     )
 }
+
+export default About

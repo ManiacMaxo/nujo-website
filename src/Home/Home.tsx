@@ -1,40 +1,44 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 import CountUp from 'react-countup'
-import './scss/Home.scss'
+import Code from '../components/Code/Code'
+import './Home.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
     faServer,
     faProjectDiagram,
     faUpload,
+    faSun,
+    faMoon,
 } from '@fortawesome/free-solid-svg-icons'
+import { Link } from 'react-router-dom'
 
-library.add(faProjectDiagram, faServer, faUpload)
+library.add(faProjectDiagram, faServer, faUpload, faSun, faMoon)
 
 interface Props {}
 
-export const Home: React.FC<Props> = () => {
+const Home: React.FC<Props> = () => {
     return (
-        <main>
-            <section className="showcase bg-primary">
+        <main className="home-page">
+            <section className="hero bg-primary">
                 <div className="container grid">
-                    <div className="showcase-text">
+                    <div className="hero-text">
                         <h1>Easy model building</h1>
                         <p>
                             Build and train ML models easily using intuitive
                             high-level APIs with eager execution, which makes
                             for immediate model iteration and easy debugging.
                         </p>
-                        <a
-                            href="/features.html"
+                        <Link
+                            to="/about"
                             className="btn btn-outline"
                             title="features"
                         >
                             Read More
-                        </a>
+                        </Link>
                     </div>
 
-                    <div className="showcase-form card">
+                    <div className="hero-form card">
                         <h2>Request a Demo</h2>
                         <form>
                             <div className="form-control">
@@ -82,7 +86,7 @@ export const Home: React.FC<Props> = () => {
 
                     <div className="grid grid-3 text-center my-4">
                         <article>
-                            <FontAwesomeIcon icon="server" />
+                            <FontAwesomeIcon icon="server" className="fa-3x" />
                             <CountUp
                                 start={0}
                                 end={10349405}
@@ -95,7 +99,7 @@ export const Home: React.FC<Props> = () => {
                             <p className="text-secondary">Deployments</p>
                         </article>
                         <article>
-                            <FontAwesomeIcon icon="upload" />
+                            <FontAwesomeIcon icon="upload" className="fa-3x" />
                             <CountUp
                                 start={0}
                                 end={92}
@@ -109,7 +113,10 @@ export const Home: React.FC<Props> = () => {
                             <p className="text-secondary">Published</p>
                         </article>
                         <article>
-                            <FontAwesomeIcon icon="project-diagram" />
+                            <FontAwesomeIcon
+                                icon="project-diagram"
+                                className="fa-3x"
+                            />
                             <CountUp
                                 start={0}
                                 end={2205669}
@@ -126,35 +133,15 @@ export const Home: React.FC<Props> = () => {
             </section>
             <section className="cli">
                 <div className="container grid">
-                    <code>
-                        <header>
-                            <div className="mac-buttons">
-                                <button
-                                    id="redCloseButton"
-                                    title="do not click"
-                                ></button>
-                                <div></div>
-                                <div></div>
-                            </div>
-                            <i
-                                className="theme fas fa-sun"
-                                title="change theme"
-                            ></i>
-                        </header>
-                        <p>
-                            <span className="comment">
-                                Requires the latest pip
-                            </span>
-                            <span className="command">
-                                pip install --upgrade pip
-                            </span>
-                            <br />
-                            <span className="comment">
-                                Current stable release
-                            </span>
-                            <span className="command">pip install nujo</span>
-                        </p>
-                    </code>
+                    <Code no-header>
+                        <span className="comment">Requires the latest pip</span>
+                        <span className="command">
+                            pip install --upgrade pip
+                        </span>
+                        <br />
+                        <span className="comment">Current stable release</span>
+                        <span className="command">pip install nujo</span>
+                    </Code>
                     <article className="card">
                         <h3>Easy to use, cross platform CLI</h3>
                     </article>
@@ -172,13 +159,13 @@ export const Home: React.FC<Props> = () => {
                             Upload your model to the Cloud and train easily
                             without powerful computational tools
                         </p>
-                        <a
-                            href="features.html"
+                        <Link
+                            to="/about"
                             className="btn btn-dark"
                             title="features"
                         >
                             Read More
-                        </a>
+                        </Link>
                     </div>
                     <img src="/img/cloud.png" alt="" />
                 </div>
@@ -204,3 +191,5 @@ export const Home: React.FC<Props> = () => {
         </main>
     )
 }
+
+export default Home

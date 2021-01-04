@@ -1,15 +1,17 @@
-import './scss/Docs.scss'
+import './Docs.scss'
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faInfo } from '@fortawesome/free-solid-svg-icons'
+import { Link } from 'react-router-dom'
+import Code from '../components/Code/Code'
 library.add(faInfo)
 
 interface Props {}
 
-export const Docs: React.FC<Props> = () => {
+const Docs: React.FC<Props> = () => {
     return (
-        <main>
+        <main className="docs-page">
             <section className="heading bg-primary py-3">
                 <div className="container grid">
                     <div>
@@ -28,13 +30,13 @@ export const Docs: React.FC<Props> = () => {
                         <nav>
                             <ul>
                                 <li>
-                                    <a href="#">Introduction</a>
+                                    <Link to="#">Introduction</Link>
                                 </li>
                                 <li>
-                                    <a href="#">Installation</a>
+                                    <Link to="#">Installation</Link>
                                 </li>
                                 <li>
-                                    <a href="#">Starting up</a>
+                                    <Link to="#">Starting up</Link>
                                 </li>
                             </ul>
                         </nav>
@@ -42,13 +44,13 @@ export const Docs: React.FC<Props> = () => {
                         <nav>
                             <ul>
                                 <li>
-                                    <a href="#">Something</a>
+                                    <Link to="#">Something</Link>
                                 </li>
                                 <li>
-                                    <a href="#">Datasets</a>
+                                    <Link to="#">Datasets</Link>
                                 </li>
                                 <li>
-                                    <a href="#">Something else</a>
+                                    <Link to="#">Something else</Link>
                                 </li>
                             </ul>
                         </nav>
@@ -72,9 +74,9 @@ export const Docs: React.FC<Props> = () => {
                             elit. Obcaecati accusamus architecto porro esse
                             atque? Quis facilis vitae at ipsa saepe!
                         </p>
-                        <a href="#" className="btn btn-primary">
+                        <Link to="#" className="btn btn-primary">
                             Install <i>nujo</i>
-                        </a>
+                        </Link>
                         <h3>Requirements</h3>
                         <ul>
                             <li>MacOS, Windows 10, Linux</li>
@@ -85,29 +87,23 @@ export const Docs: React.FC<Props> = () => {
                                     className="text-link"
                                 >
                                     Poetry
-                                </a>
+                                </a>{' '}
                                 python environment
                             </li>
                         </ul>
 
                         <h3>Install</h3>
                         <p>Mac (Homebrew)</p>
-                        <pre>
-                            <code className="command">
-                                brew install python3
-                            </code>
-                        </pre>
+                        <p className="command code">brew install python3</p>
                         <p>Python</p>
-                        <pre>
-                            <code className="command">pip3 install nujo</code>
-                        </pre>
+                        <p className="command code">pip3 install nujo</p>
                         <p>Anaconda</p>
-                        <pre>
-                            <code className="command">conda install nujo</code>
-                        </pre>
+                        <p className="command code">conda install nujo</p>
                     </div>
                 </div>
             </section>
         </main>
     )
 }
+
+export default Docs
