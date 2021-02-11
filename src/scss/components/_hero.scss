@@ -1,0 +1,55 @@
+@import '../const';
+
+.hero {
+    height: 400px;
+    position: relative;
+
+    h1 {
+        font-size: 40px;
+    }
+
+    p {
+        margin: 20px 0;
+    }
+
+    & .grid {
+        grid-template-columns: 55% 40%;
+        gap: 5%;
+        overflow: visible;
+    }
+
+    &-form {
+        position: relative;
+        top: 60px;
+        height: 350px;
+        max-width: 400px;
+        width: 100%;
+        margin: 0 !important;
+        padding: 40px;
+        z-index: 100;
+
+        .form-control {
+            margin: 30px 0;
+
+            input {
+                border: 0;
+                border-bottom: 1px solid #b4becb;
+                width: 100%;
+                padding: 3px;
+                font-size: 1rem;
+                outline: 0;
+            }
+        }
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        height: 100px;
+        bottom: -70px;
+        right: 0;
+        left: 0;
+        background: #fff;
+        @include transform(skewY(-2deg));
+    }
+}

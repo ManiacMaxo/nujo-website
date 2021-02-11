@@ -1,0 +1,195 @@
+import React, { useCallback } from 'react'
+import CountUp from 'react-countup'
+import Code from '../components/Code/Code'
+import './Home.scss'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import {
+    faServer,
+    faProjectDiagram,
+    faUpload,
+    faSun,
+    faMoon,
+} from '@fortawesome/free-solid-svg-icons'
+import { Link } from 'react-router-dom'
+
+library.add(faProjectDiagram, faServer, faUpload, faSun, faMoon)
+
+interface Props {}
+
+const Home: React.FC<Props> = () => {
+    return (
+        <main className="home-page">
+            <section className="hero bg-primary">
+                <div className="container grid">
+                    <div className="hero-text">
+                        <h1>Easy model building</h1>
+                        <p>
+                            Build and train ML models easily using intuitive
+                            high-level APIs with eager execution, which makes
+                            for immediate model iteration and easy debugging.
+                        </p>
+                        <Link
+                            to="/about"
+                            className="btn btn-outline"
+                            title="features"
+                        >
+                            Read More
+                        </Link>
+                    </div>
+
+                    <div className="hero-form card">
+                        <h2>Request a Demo</h2>
+                        <form>
+                            <div className="form-control">
+                                <input
+                                    type="text"
+                                    name="name"
+                                    placeholder="Name"
+                                    required
+                                />
+                            </div>
+                            <div className="form-control">
+                                <input
+                                    type="text"
+                                    name="company"
+                                    placeholder="Company Name"
+                                    required
+                                />
+                            </div>
+                            <div className="form-control">
+                                <input
+                                    type="email"
+                                    name="email"
+                                    placeholder="Email"
+                                    required
+                                />
+                            </div>
+                            <button
+                                type="submit"
+                                className="btn btn-primary"
+                                title="Send"
+                            >
+                                Send
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <section className="stats">
+                <div className="container">
+                    <h3 className="stats-heading text-center my-1">
+                        A Reverse-mode Automatic Differentiation library for
+                        Neural Networks
+                    </h3>
+
+                    <div className="grid grid-3 text-center my-4">
+                        <article>
+                            <FontAwesomeIcon icon="server" className="fa-3x" />
+                            <CountUp
+                                start={0}
+                                end={10349405}
+                                delay={0}
+                                separator=","
+                                duration={4}
+                            >
+                                {({ countUpRef }) => <h3 ref={countUpRef} />}
+                            </CountUp>
+                            <p className="text-secondary">Deployments</p>
+                        </article>
+                        <article>
+                            <FontAwesomeIcon icon="upload" className="fa-3x" />
+                            <CountUp
+                                start={0}
+                                end={92}
+                                delay={0}
+                                suffix=" TB"
+                                duration={4}
+                            >
+                                {({ countUpRef }) => <h3 ref={countUpRef} />}
+                            </CountUp>
+
+                            <p className="text-secondary">Published</p>
+                        </article>
+                        <article>
+                            <FontAwesomeIcon
+                                icon="project-diagram"
+                                className="fa-3x"
+                            />
+                            <CountUp
+                                start={0}
+                                end={2205669}
+                                delay={0}
+                                separator=","
+                                duration={4}
+                            >
+                                {({ countUpRef }) => <h3 ref={countUpRef} />}
+                            </CountUp>
+                            <p className="text-secondary">Projects</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+            <section className="cli">
+                <div className="container grid">
+                    <Code no-header>
+                        <span className="comment">Requires the latest pip</span>
+                        <span className="command">
+                            pip install --upgrade pip
+                        </span>
+                        <br />
+                        <span className="comment">Current stable release</span>
+                        <span className="command">pip install nujo</span>
+                    </Code>
+                    <article className="card">
+                        <h3>Easy to use, cross platform CLI</h3>
+                    </article>
+                    <article className="card">
+                        <h3>Spin up a model in seconds</h3>
+                    </article>
+                </div>
+            </section>
+
+            <section className="cloud bg-primary my-2 py-3">
+                <div className="container grid">
+                    <div className="text-center">
+                        <h2 className="lg">Advanced model training</h2>
+                        <p className="lead my-1">
+                            Upload your model to the Cloud and train easily
+                            without powerful computational tools
+                        </p>
+                        <Link
+                            to="/about"
+                            className="btn btn-dark"
+                            title="features"
+                        >
+                            Read More
+                        </Link>
+                    </div>
+                    <img src="/img/cloud.png" alt="" />
+                </div>
+            </section>
+
+            <section className="logos my-1">
+                <h2 className="md text-center">Used tools</h2>
+                <div className="container flex">
+                    <article className="card">
+                        <h4>python</h4>
+                        <img src="/img/python.svg" alt="python" />
+                    </article>
+                    <article className="card">
+                        <h4>numpy</h4>
+                        <img src="/img/numpy.svg" alt="numpy" />
+                    </article>
+                    <article className="card">
+                        <h4>pdoc3</h4>
+                        <img src="/img/pdoc.png" alt="pdoc3" />
+                    </article>
+                </div>
+            </section>
+        </main>
+    )
+}
+
+export default Home

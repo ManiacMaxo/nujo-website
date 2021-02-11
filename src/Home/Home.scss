@@ -1,0 +1,43 @@
+@import '../scss/components/hero';
+@import '../scss/components/stats';
+@import '../scss/components/cloud';
+@import '../scss/components/logos';
+@import '../scss/components/card';
+
+.home-page {
+    .cli {
+        .grid {
+            grid-template-columns: repeat(3, 1fr);
+
+            .card {
+                grid-column: 3;
+            }
+        }
+    }
+
+    @media (max-width: $tablet-width) {
+        .hero {
+            height: auto;
+
+            &-text {
+                text-align: center;
+                margin-top: 40px;
+            }
+
+            &-form {
+                justify-self: center;
+            }
+        }
+        .cli {
+            code {
+                $padding: 1rem;
+                margin: $padding;
+                width: calc(100% - 2 * #{$padding}) !important;
+            }
+
+            .card {
+                grid-row: 2;
+            }
+        }
+    }
+}

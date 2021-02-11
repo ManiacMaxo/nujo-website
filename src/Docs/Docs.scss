@@ -1,0 +1,27 @@
+@import '../scss/components/card';
+@import '../scss/components/heading';
+
+.docs-page {
+    .main {
+        h3 {
+            margin: 20px 0;
+        }
+
+        .grid {
+            grid-template-columns: 1fr 2fr;
+        }
+
+        aside {
+            align-self: flex-start;
+            li {
+                font-size: 17px;
+                padding-bottom: 5px;
+                border-bottom: 1px solid #ccc;
+
+                a:hover {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}

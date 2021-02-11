@@ -1,0 +1,63 @@
+@import '../../scss/const';
+
+.global-header {
+    background-color: $primary-color;
+    color: #fff;
+    height: 70px;
+
+    nav {
+        ul {
+            display: flex;
+            color: inherit;
+
+            a {
+                margin: 0 5px;
+                padding: 10px;
+                transition: width 0.2s;
+                display: inline-block;
+
+                &::after {
+                    content: '';
+                    display: block;
+                    width: 0;
+                    height: 1px;
+                    background: #fff;
+                    transition: width 0.2s;
+                }
+                &:hover::after {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+.flex {
+    justify-content: space-between;
+}
+
+.active {
+    color: #9fe7fd;
+    &::after {
+        background: #9fe7fd !important;
+    }
+}
+
+@media (max-width: $mobile-width) {
+    .global-header .container {
+        margin: 0 2rem;
+    }
+
+    .global-header {
+        height: 110px;
+
+        .flex {
+            flex-direction: column;
+        }
+
+        ul {
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+    }
+}
