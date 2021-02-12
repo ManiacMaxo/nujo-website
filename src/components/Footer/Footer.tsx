@@ -1,16 +1,8 @@
 import styles from './Footer.module.scss'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { library } from '@fortawesome/fontawesome-svg-core'
-import {
-    faTrello,
-    faGithub,
-    faPython,
-    faTwitter,
-} from '@fortawesome/free-brands-svg-icons'
+import { FaTrello, FaGithub, FaPython, FaTwitter } from 'react-icons/fa'
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-library.add(faTrello, faGithub, faPython, faTwitter)
 const Footer = () => {
     return (
         <footer
@@ -41,34 +33,22 @@ const Footer = () => {
                 </nav>
                 <div className={styles.social}>
                     <a href="https://github.com/VIVelev/nujo" title="github">
-                        <FontAwesomeIcon
-                            icon={['fab', 'github']}
-                            className="fa-2x"
-                        />
+                        <FaGithub size={28} />
                     </a>
                     <a
                         href="https://pypi.org/project/nujo/"
                         title="pypi project"
                     >
-                        <FontAwesomeIcon
-                            icon={['fab', 'python']}
-                            className="fa-2x"
-                        />
+                        <FaPython size={28} />
                     </a>
                     <a
                         href="https://trello.com/b/fObyuiWt/nujo-develop"
                         title="trello"
                     >
-                        <FontAwesomeIcon
-                            icon={['fab', 'trello']}
-                            className="fa-2x"
-                        />
+                        <FaTrello size={28} />
                     </a>
                     <a href="https://twitter.com" title="twitter">
-                        <FontAwesomeIcon
-                            icon={['fab', 'twitter']}
-                            className="fa-2x"
-                        />
+                        <FaTwitter size={28} />
                     </a>
                 </div>
             </div>

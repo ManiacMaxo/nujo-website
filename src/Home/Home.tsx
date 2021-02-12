@@ -1,19 +1,9 @@
-import React, { useCallback } from 'react'
+import React from 'react'
 import CountUp from 'react-countup'
+import { FaProjectDiagram, FaServer, FaUpload } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
 import Code from '../components/Code/Code'
 import './Home.scss'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { library } from '@fortawesome/fontawesome-svg-core'
-import {
-    faServer,
-    faProjectDiagram,
-    faUpload,
-    faSun,
-    faMoon,
-} from '@fortawesome/free-solid-svg-icons'
-import { Link } from 'react-router-dom'
-
-library.add(faProjectDiagram, faServer, faUpload, faSun, faMoon)
 
 interface Props {}
 
@@ -86,7 +76,7 @@ const Home: React.FC<Props> = () => {
 
                     <div className="grid grid-3 text-center my-4">
                         <article>
-                            <FontAwesomeIcon icon="server" className="fa-3x" />
+                            <FaServer size={42} />
                             <CountUp
                                 start={0}
                                 end={10349405}
@@ -99,7 +89,7 @@ const Home: React.FC<Props> = () => {
                             <p className="text-secondary">Deployments</p>
                         </article>
                         <article>
-                            <FontAwesomeIcon icon="upload" className="fa-3x" />
+                            <FaUpload size={42} />
                             <CountUp
                                 start={0}
                                 end={92}
@@ -113,10 +103,7 @@ const Home: React.FC<Props> = () => {
                             <p className="text-secondary">Published</p>
                         </article>
                         <article>
-                            <FontAwesomeIcon
-                                icon="project-diagram"
-                                className="fa-3x"
-                            />
+                            <FaProjectDiagram size={42} />
                             <CountUp
                                 start={0}
                                 end={2205669}

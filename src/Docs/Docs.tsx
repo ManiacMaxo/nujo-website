@@ -1,11 +1,7 @@
-import './Docs.scss'
 import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { faInfo } from '@fortawesome/free-solid-svg-icons'
+import { FaInfo } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
-import Code from '../components/Code/Code'
-library.add(faInfo)
+import './Docs.scss'
 
 interface Props {}
 
@@ -65,7 +61,7 @@ const Docs: React.FC<Props> = () => {
                             debitis dolor.
                         </p>
                         <div className="alert alert-success">
-                            <FontAwesomeIcon icon="info" />
+                            <FaInfo />
                             Lorem ipsum dolor, sit amet consectetur adipisicing
                             elit. Nostrum, voluptatem.
                         </div>

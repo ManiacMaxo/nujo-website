@@ -1,14 +1,13 @@
-import React, { useCallback, useState, useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
+import { FaMoon, FaSun } from 'react-icons/fa'
 import styles from './Code.module.scss'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons'
 
 interface Props {
     noHeader?: boolean
 }
 
 const Code: React.FC<Props> = (props) => {
-    const [theme, setTheme] = useState(faSun)
+    const [theme, setTheme] = useState('light')
 
     useEffect(() => {}, [theme])
 
@@ -24,13 +23,21 @@ const Code: React.FC<Props> = (props) => {
                         <div></div>
                         <div></div>
                     </div>
-                    <FontAwesomeIcon
-                        icon={theme}
-                        className={styles.theme}
-                        onClick={() =>
-                            setTheme(theme === faSun ? faMoon : faSun)
-                        }
-                    />
+                    {theme === 'light' ? (
+                        <FaMoon
+                            className={styles.theme}
+                            onClick={() =>
+                                setTheme(theme === 'light' ? 'dark' : 'light')
+                            }
+                        />
+                    ) : (
+                        <FaSun
+                            className={styles.theme}
+                            onClick={() =>
+                                setTheme(theme === 'light' ? 'dark' : 'light')
+                            }
+                        />
+                    )}
                 </header>
             )}
             <p>{props.children}</p>

@@ -1,10 +1,7 @@
 import './About.scss'
 import React from 'react'
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { faServer } from '@fortawesome/free-solid-svg-icons'
-library.add(faServer)
+import { FaServer } from 'react-icons/fa'
 
 interface Props {}
 
@@ -45,7 +42,7 @@ const About: React.FC<Props> = () => {
             <section className="main my-2">
                 <div className="container grid grid-3">
                     <article className="card flex">
-                        <FontAwesomeIcon icon="server" />
+                        <FaServer />
                         <p>
                             Lorem ipsum dolor sit amet consectetur adipisicing
                             elit. Alias possimus sit saepe ullam. Quisquam,

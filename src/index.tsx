@@ -1,38 +1,17 @@
-import React, { Suspense } from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom'
+import { BrowserRouter } from 'react-router-dom'
+import App from './App'
+import Footer from './components/Footer'
+import Header from './components/Header'
 import reportWebVitals from './reportWebVitals'
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import './scss/index.scss'
-
-import Header from './components/Header/Header'
-import Footer from './components/Footer/Footer'
-
-const Home = React.lazy(() => import('./Home/Home'))
-const About = React.lazy(() => import('./About/About'))
-const Docs = React.lazy(() => import('./Docs/Docs'))
 
 ReactDOM.render(
     <React.StrictMode>
         <BrowserRouter>
             <Header />
-            <Switch>
-                <Route exact path="/">
-                    <Suspense fallback="loading...">
-                        <Home />
-                    </Suspense>
-                </Route>
-                <Route exact path="/about">
-                    <Suspense fallback="loading...">
-                        <About />
-                    </Suspense>
-                </Route>
-                <Route exact path="/docs">
-                    <Suspense fallback="loading...">
-                        <Docs />
-                    </Suspense>
-                </Route>
-                <Route path="/" render={() => <div>404</div>}></Route>
-            </Switch>
+            <App />
             <Footer />
         </BrowserRouter>
     </React.StrictMode>,
